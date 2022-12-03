@@ -1,6 +1,6 @@
-# Template bottom tabs with auth flow (Typescript)
+# popkdex
 
-Typescript Template starter with React Navigation Bottom Tabs and Supabase auth using React Context
+a kpop app where you can collect digital photo cards.
 
 # Preview
 
@@ -69,15 +69,15 @@ There's 2 stack navigator :
 
 ```jsx
 export default () => {
-	const auth = useContext(AuthContext);
-	const user = auth.user;
-	return (
-		<NavigationContainer>
-			{user == null && <Loading />}
-			{user == false && <Auth />}
-			{user == true && <Main />}
-		</NavigationContainer>
-	);
+  const auth = useContext(AuthContext);
+  const user = auth.user;
+  return (
+    <NavigationContainer>
+      {user == null && <Loading />}
+      {user == false && <Auth />}
+      {user == true && <Main />}
+    </NavigationContainer>
+  );
 };
 ```
 
