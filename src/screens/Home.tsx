@@ -11,6 +11,7 @@ import {
   SectionContent,
   useTheme,
   themeColor,
+  SectionImage,
 } from "react-native-rapi-ui";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
@@ -46,7 +47,10 @@ export default function ({
           padding: 20,
         }}
       >
-        <Section style={{ width: "100%", marginBottom: 20 }}>
+        <Section
+          style={{ width: "100%", marginBottom: 20 }}
+          onTouchEnd={() => navigation.navigate("Groups")}
+        >
           <SectionContent
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -64,11 +68,13 @@ export default function ({
               size={24}
               color={isDarkmode ? themeColor.white100 : themeColor.dark}
               style={{ display: "flex" }}
-              onPress={() => navigation.navigate("Groups")}
             />
           </SectionContent>
         </Section>
-        <Section style={{ width: "100%", marginBottom: 20 }}>
+        <Section
+          style={{ width: "100%", marginBottom: 20 }}
+          onTouchEnd={() => navigation.navigate("Idols")}
+        >
           <SectionContent
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -86,10 +92,20 @@ export default function ({
               size={24}
               color={isDarkmode ? themeColor.white100 : themeColor.dark}
               style={{ display: "flex" }}
-              onPress={() => navigation.navigate("Idols")}
             />
           </SectionContent>
         </Section>
+      </View>
+      <View style={{ paddingHorizontal: 20 }}>
+        <Button
+          text="Trivia"
+          size="lg"
+          rightContent={
+            <Ionicons name="arrow-forward" size={20} color={themeColor.white} />
+          }
+          type="TouchableOpacity"
+          onPress={() => navigation.navigate("Trivia")}
+        />
       </View>
     </Layout>
   );

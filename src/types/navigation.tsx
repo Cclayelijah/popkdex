@@ -1,6 +1,6 @@
 export type MainStackParamList = {
   MainTabs: undefined;
-  SecondScreen: undefined;
+  Trivia: undefined;
   Groups: undefined;
   Idols: undefined;
 };
