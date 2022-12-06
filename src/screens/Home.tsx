@@ -2,7 +2,6 @@ import React from "react";
 import { View, Linking } from "react-native";
 import { MainStackParamList } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { supabase } from "../initSupabase";
 import {
   Layout,
   Button,
@@ -14,6 +13,7 @@ import {
   themeColor,
 } from "react-native-rapi-ui";
 import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function ({
   navigation,
@@ -42,44 +42,51 @@ export default function ({
         style={{
           flex: 1,
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "flex-start",
+          padding: 20,
         }}
       >
-        <Section style={{ marginTop: 20 }}>
-          <SectionContent>
-            <Text fontWeight="bold" style={{ textAlign: "center" }}>
-              These UI components provided by Rapi UI
+        <Section style={{ width: "100%", marginBottom: 20 }}>
+          <SectionContent
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text
+              size="xl"
+              fontWeight="bold"
+              style={{
+                display: "flex",
+              }}
+            >
+              Groups
             </Text>
-            <Button
-              style={{ marginTop: 10 }}
-              text="Rapi UI Documentation"
-              status="info"
-              onPress={() => Linking.openURL("https://rapi-ui.kikiding.space/")}
+            <AntDesign
+              name="rightcircle"
+              size={24}
+              color={isDarkmode ? themeColor.white100 : themeColor.dark}
+              style={{ display: "flex" }}
+              onPress={() => navigation.navigate("Groups")}
             />
-            <Button
-              text="Go to second screen"
-              onPress={() => {
-                navigation.navigate("SecondScreen");
-              }}
+          </SectionContent>
+        </Section>
+        <Section style={{ width: "100%", marginBottom: 20 }}>
+          <SectionContent
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text
+              size="xl"
+              fontWeight="bold"
               style={{
-                marginTop: 10,
+                display: "flex",
               }}
-            />
-            <Button
-              status="danger"
-              text="Logout"
-              onPress={async () => {
-                const { error } = await supabase.auth.signOut();
-                if (!error) {
-                  alert("Signed out!");
-                }
-                if (error) {
-                  alert(error.message);
-                }
-              }}
-              style={{
-                marginTop: 10,
-              }}
+            >
+              Idols
+            </Text>
+            <AntDesign
+              name="rightcircle"
+              size={24}
+              color={isDarkmode ? themeColor.white100 : themeColor.dark}
+              style={{ display: "flex" }}
+              onPress={() => navigation.navigate("Idols")}
             />
           </SectionContent>
         </Section>

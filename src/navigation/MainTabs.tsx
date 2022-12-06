@@ -6,7 +6,7 @@ import TabBarIcon from "../components/utils/TabBarIcon";
 import TabBarText from "../components/utils/TabBarText";
 
 import Home from "../screens/Home";
-import About from "../screens/About";
+import PhotoCards from "../screens/PhotoCards";
 import Profile from "../screens/Profile";
 
 const Tabs = createBottomTabNavigator();
@@ -22,19 +22,6 @@ const MainTabs = () => {
         },
       }}
     >
-      {/* these icons using Ionicons */}
-      <Tabs.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarLabel: ({ focused }) => (
-            <TabBarText focused={focused} title="Home" />
-          ),
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={"md-home"} />
-          ),
-        }}
-      />
       <Tabs.Screen
         name="Profile"
         component={Profile}
@@ -48,14 +35,26 @@ const MainTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="About"
-        component={About}
+        name="Home"
+        component={Home}
         options={{
           tabBarLabel: ({ focused }) => (
-            <TabBarText focused={focused} title="About" />
+            <TabBarText focused={focused} title="Home" />
           ),
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={"ios-information-circle"} />
+            <TabBarIcon focused={focused} icon={"md-home"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="PhotoCards"
+        component={PhotoCards}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <TabBarText focused={focused} title="Photo Cards" />
+          ),
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon={"albums"} />
           ),
         }}
       />
