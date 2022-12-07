@@ -8,38 +8,14 @@ import {
   Section,
   SectionContent,
   Text,
-  useTheme,
-  themeColor,
-  TopNav,
-  
 } from "react-native-rapi-ui";
-import { Ionicons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 import { supabase } from "../initSupabase";
 
 export default function ({
   navigation,
 }: NativeStackScreenProps<MainStackParamList, "MainTabs">) {
-  const { isDarkmode, setTheme } = useTheme();
   return (
     <Layout>
-      <TopNav
-        middleContent="Home"
-        rightContent={
-          <Ionicons
-            name={isDarkmode ? "sunny" : "moon"}
-            size={20}
-            color={isDarkmode ? themeColor.white100 : themeColor.dark}
-          />
-        }
-        rightAction={() => {
-          if (isDarkmode) {
-            setTheme("light");
-          } else {
-            setTheme("dark");
-          }
-        }}
-      />
       <View
         style={{
           flex: 1,
