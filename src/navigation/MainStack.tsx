@@ -5,6 +5,7 @@ import Trivia from "../screens/Trivia";
 import MainTabs from "./MainTabs";
 import Groups from "../screens/Groups";
 import Idols from "../screens/Idols";
+import Wish from "../screens/Wish";
 
 const MainStack = createNativeStackNavigator();
 const Main = () => {
@@ -18,6 +19,7 @@ const Main = () => {
       <MainStack.Screen name="Trivia" component={Trivia} />
       <MainStack.Screen name="Groups" component={Groups} />
       <MainStack.Screen name="Idols" component={Idols} />
+      <MainStack.Screen name="Wish" component={Wish} />
     </MainStack.Navigator>
   );
 };

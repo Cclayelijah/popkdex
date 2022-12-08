@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Linking } from "react-native";
+import { View, Linking, Image } from "react-native";
 import { MainStackParamList } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import {
@@ -13,7 +13,7 @@ import {
   themeColor,
   SectionImage,
 } from "react-native-rapi-ui";
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function ({
@@ -92,6 +92,17 @@ export default function ({
               size={24}
               color={isDarkmode ? themeColor.white100 : themeColor.dark}
               style={{ display: "flex" }}
+            />
+          </SectionContent>
+        </Section>
+      </View>
+      <View style={{ flex: 1, padding: 20 }}>
+        <Section onTouchEnd={() => navigation.navigate("Wish")}>
+          <SectionContent style={{ alignItems: "center", paddingVertical: 40 }}>
+            <FontAwesome5
+              name="hand-sparkles"
+              size={80}
+              color={isDarkmode ? themeColor.white100 : themeColor.dark}
             />
           </SectionContent>
         </Section>
