@@ -3,6 +3,7 @@ export type MainStackParamList = {
   Trivia: undefined;
   Groups: undefined;
   Idols: undefined;
+  Wish: undefined;
 };
 
 export type AuthStackParamList = {
